@@ -23,6 +23,13 @@ Post.init(
       type: DataTypes.TEXT,
       allowNull: false,
     },
+    job_budget: {
+      type: DataTypes.DECIMAL,
+      allowNull: false,
+      validate: {
+        isNumeric: true,
+      },
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
