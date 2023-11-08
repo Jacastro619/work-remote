@@ -1,7 +1,6 @@
 const router = require("express").Router();
 const { User, Post } = require("../models");
 const { withAuth, areAuth } = require("../utils/auth");
-const sequelize = require("../config/connection");
 
 // route to home page
 router.get("/", async (req, res) => {
@@ -15,10 +14,15 @@ router.get("/jobs", async (req, res) => {
       include: [{ model: User, attributes: ["username", "email"] }],
     });
 
-    const posts = dbPostData.map((post) => post.get({ plain: true }));
+    let posts = dbPostData.map((post) => post.get({ plain: true }));
+    if (!req.session.loggedIn) {
+      posts = posts.slice(0, 6);
+      res.json(posts);
+      return;
+    }
     // shows all the jobs if the user is logged in
     // res.render("jobs", { posts, loggedIn: req.session.loggedIn });
-    res.json(dbPostData);
+    res.json(posts);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -68,6 +72,41 @@ router.post("/post", withAuth, async (req, res) => {
     });
 
     res.status(200).json(addPost);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.put("/edit/post/:id", withAuth, async (req, res) => {
+  try {
+    const editPost = await Post.update(
+      {
+        job_type: req.body.job_type,
+        job_title: req.body.job_title,
+        job_description: req.body.job_description,
+        job_budget: req.body.job_budget,
+        user_id: req.session.user_id,
+      },
+      {
+        where: {
+          id: req.params.id,
+        },
+      }
+    );
+    res.status(200).json(editPost);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.delete("/delete/post/:id", withAuth, async (req, res) => {
+  try {
+    const deletePost = await Post.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+    res.status(200).json(deletePost);
   } catch (err) {
     res.status(500).json(err);
   }
