@@ -1,0 +1,40 @@
+{{!-- Page to Post Job --}}
+
+<div class="d-flex justify-content-center pt-4">
+    <div class="col-9">
+        <h3>Create a Job Post:</h3>
+
+        <form class="form new-job-form mb-1">
+            <div class="form-group">
+                <input class="form-input col-4" type="text" id="job-title" name="job-title" placeholder="Job Title" />
+            </div>
+
+            <div class="form-group">
+                <textarea class="form-input col-12" id="job-desc" name="job-desc" placeholder="Job Description"
+                    rows="5"></textarea>
+            </div>
+
+            <!-- Job Types -->
+            <h6>Job Types:</h6>
+            <select class="custom-select col-5" required>
+                <option value="">Open To Select Job Type</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+
+            <!-- Budget -->
+            <h6 class="mt-4">Budget:</h6>
+            <div class="form-group">
+                <input class="form-input col-4" type="text" id="budget" name="budget" placeholder="Budget" />
+                <small id="helpInfo" class="text-muted pl-1">
+                    Enter amount as an amount without the $ sign.
+                </small>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary float-right">Create</button>
+            </div>
+        </form>
+    </div>
+</div>
