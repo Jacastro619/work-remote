@@ -2,3 +2,7 @@
     mix-blend-mode: multiply;
     max-width: 12%;
 }
+
+#roundBTN{
+    border-radius: 25px;
+}
