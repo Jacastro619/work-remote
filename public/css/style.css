@@ -10,3 +10,12 @@
 #roundedSquare{
     border-radius: 25px;
 }
+
+#rounded{
+    border-radius: 5px;
+}
+
+profile{
+    border-radius: 5px;
+    
+}
