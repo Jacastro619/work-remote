@@ -30,6 +30,10 @@ Post.init(
         isNumeric: true,
       },
     },
+    timestamp: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
@@ -40,7 +44,7 @@ Post.init(
   },
   {
     sequelize,
-    timestamps: true,
+    timestamps: false,
     freezeTableName: true,
     modelName: "post",
   }

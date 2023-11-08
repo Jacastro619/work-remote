@@ -7,6 +7,7 @@ const postData = [
     job_description:
       "I need a skilled web designer that can design a website for my dance studio",
     job_budget: 200,
+    timestamp: "Created on Nov 8th 2023",
     user_id: 1,
   },
   {

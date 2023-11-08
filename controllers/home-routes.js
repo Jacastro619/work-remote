@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { User, Post } = require("../models");
 const { withAuth, areAuth } = require("../utils/auth");
+const { format_date } = require("../utils/helpers");
 
 // route to home page
 router.get("/", async (req, res) => {
@@ -68,11 +69,13 @@ router.post("/post", withAuth, async (req, res) => {
       job_title: req.body.job_title,
       job_description: req.body.job_description,
       job_budget: req.body.job_budget,
+      timestamp: `Created on ${format_date()}`,
       user_id: req.session.user_id,
     });
 
     res.status(200).json(addPost);
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
@@ -85,6 +88,7 @@ router.put("/edit/post/:id", withAuth, async (req, res) => {
         job_title: req.body.job_title,
         job_description: req.body.job_description,
         job_budget: req.body.job_budget,
+        timestamp: `Updated on ${format_date()}`,
         user_id: req.session.user_id,
       },
       {
