@@ -15,7 +15,7 @@ const postData = [
     job_title: "Need a Writer!",
     job_description: "I need a skilled Writer that can write great content",
     job_budget: 150,
-    timestamp: "Created on Dec 2nd 2023",
+    timestamp: "Created on Dec 2nd 2022",
     user_id: 4,
   },
   {
