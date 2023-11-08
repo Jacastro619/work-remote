@@ -57,6 +57,22 @@ router.get("/jobs/user/posts", withAuth, async (req, res) => {
   }
 });
 
+router.post("/post", withAuth, async (req, res) => {
+  try {
+    const addPost = await Post.create({
+      job_type: req.body.job_type,
+      job_title: req.body.job_title,
+      job_description: req.body.job_description,
+      job_budget: req.body.job_budget,
+      user_id: req.session.user_id,
+    });
+
+    res.status(200).json(addPost);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 // Login
 router.get("/login", areAuth, (req, res) => {
   res.render("login");
