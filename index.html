@@ -45,6 +45,36 @@
   <!-- Main -->
   <main class="container p-5">
 
+    <div">
+      <div class="col-9">
+        <h3>Create a Job Post:</h3>
+  
+        <form class="form new-job-form mb-1">
+          <div class="form-group">
+            <input class="form-input col-4" type="text" id="job-title" name="job-title" placeholder="Job Title" />
+          </div>
+  
+          <div class="form-group">
+            <textarea class="form-input col-12" id="job-desc" name="job-desc" placeholder="Job Description"
+              rows="5"></textarea>
+          </div>
+
+          <div class="form-group col-5">
+            <h5>Job Types:</h5>
+            <select class="custom-select" required>
+              <option value="">Open To Select Job Type</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+            <div class="invalid-feedback">Example invalid custom select feedback</div>
+          </div>
+  
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">Create</button>
+          </div>
+        </form>
+
   </main>
 
   <!-- Script -->
