@@ -5,7 +5,7 @@ const { format_date } = require("../utils/helpers");
 
 // route to home page
 router.get("/", async (req, res) => {
-  res.render("homepage");
+  res.render("homepage", { loggedIn: req.session.loggedIn });
 });
 
 // route to go to job board
@@ -55,8 +55,10 @@ router.get("/jobs/user/posts", withAuth, async (req, res) => {
 
     const posts = dbPostData.map((post) => post.get({ plain: true }));
 
-    // res.render("user-jobs", { posts, loggedIn: req.session.loggedIn });
-    res.json(dbPostData);
+    console.log(posts);
+
+    res.render("dashboard", { posts, loggedIn: req.session.loggedIn });
+    // res.json(dbPostData);
   } catch (err) {
     res.status(500).json(err);
   }
