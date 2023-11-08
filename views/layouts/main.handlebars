@@ -53,6 +53,11 @@
               id="roundBTN"
             >My Job Listing</button></a>
           <button type="button" class="btn btn-info" id="roundBTN">Post Job</button>
+          <button
+            type="button"
+            class="btn btn-success"
+            id="logout-btn"
+          >Logout</button>
         </div>
       {{else}}
         {{! If not logged in, display this }}
@@ -88,6 +93,9 @@
       integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
       crossorigin="anonymous"
     ></script>
+    {{#if loggedIn}}
+      <script src="js/logout.js"></script>
+    {{/if}}
   </body>
 
 </html>
