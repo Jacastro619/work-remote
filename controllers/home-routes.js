@@ -55,8 +55,6 @@ router.get("/jobs/user/posts", withAuth, async (req, res) => {
 
     const posts = dbPostData.map((post) => post.get({ plain: true }));
 
-    console.log(posts);
-
     res.render("dashboard", { posts, loggedIn: req.session.loggedIn });
     // res.json(dbPostData);
   } catch (err) {
