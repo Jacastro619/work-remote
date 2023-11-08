@@ -1,32 +1,41 @@
-{{!-- Shows All Jobs --}}
-{{!-- <!-- Filter Menu --> --}}
+{{! Shows All Jobs }}
+{{! <!-- Filter Menu --> }}
 <div class="container">
-    <div class="dropdown">
-        <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Dropdown button
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-        </div>
+  <div class="dropdown">
+    <button
+      class="btn btn-info dropdown-toggle"
+      type="button"
+      id="dropdownMenuButton"
+      data-toggle="dropdown"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      Dropdown button
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
     </div>
+  </div>
 </div>
 
-{{!-- <!-- Job Container --> --}}
-{{!-- If logged in display all jobs avialable--}}
+{{! <!-- Job Container --> }}
+{{! If logged in display all jobs avialable}}
 {{#each posts}}
-<div class="d-inline-flex justify-content-around flex-wrap">
-    <div class="card m-2 " style="width: 20rem;">
-        <img class="card-img-top" src="https://des.az.gov/sites/default/files/job-searching.png?time=1644301518"
-            alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title">{{job_title}}</h5>
-            <h6 class="card-title">{{job_type}}</h6>
-            <p class="card-text">{{post_tease job_description}}</p>
-            <a href="#" class="btn btn-primary">Learn More</a>
-        </div>
+  <div class="d-inline-flex justify-content-around flex-wrap">
+    <div class="card m-2" style="width: 20rem;">
+      <img
+        class="card-img-top"
+        src="https://des.az.gov/sites/default/files/job-searching.png?time=1644301518"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{job_title}}</h5>
+        <h6 class="card-title">{{job_type}}</h6>
+        <p class="card-text">{{post_tease job_description}}....</p>
+        <a href="#" class="btn btn-info">Learn More</a>
+      </div>
     </div>
-</div>
+  </div>
 {{/each}}

@@ -5,7 +5,7 @@ const { format_date } = require("../utils/helpers");
 
 // route to home page
 router.get("/", async (req, res) => {
-  res.render("homepage");
+  res.render("homepage", { loggedIn: req.session.loggedIn });
 });
 
 // route to go to job board
@@ -18,12 +18,12 @@ router.get("/jobs", async (req, res) => {
     let posts = dbPostData.map((post) => post.get({ plain: true }));
     if (!req.session.loggedIn) {
       posts = posts.slice(0, 6);
-      res.json(posts);
+      res.render("jobs", { posts, loggedIn: req.session.loggedIn });
       return;
     }
     // shows all the jobs if the user is logged in
-    // res.render("jobs", { posts, loggedIn: req.session.loggedIn });
-    res.json(posts);
+    res.render("jobs", { posts, loggedIn: req.session.loggedIn });
+    // res.json(posts);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -37,8 +37,8 @@ router.get("/jobs/:id", withAuth, async (req, res) => {
 
     const post = dbPostData.get({ plain: true });
 
-    // res.render("one-job", { post, loggedIn: req.session.loggedIn });
-    res.json(dbPostData);
+    res.render("one-job", { post, loggedIn: req.session.loggedIn });
+    // res.json(dbPostData);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -55,8 +55,8 @@ router.get("/jobs/user/posts", withAuth, async (req, res) => {
 
     const posts = dbPostData.map((post) => post.get({ plain: true }));
 
-    // res.render("user-jobs", { posts, loggedIn: req.session.loggedIn });
-    res.json(dbPostData);
+    res.render("dashboard", { posts, loggedIn: req.session.loggedIn });
+    // res.json(dbPostData);
   } catch (err) {
     res.status(500).json(err);
   }
