@@ -27,6 +27,7 @@ router.post("/", async (req, res) => {
     } else if (err.errors[0].path === "email") {
       res.status(401).json(err);
     } else {
+      console.log(err);
       res.status(500).json(serverError);
     }
   }
