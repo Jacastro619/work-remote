@@ -41,26 +41,30 @@
 
 {{! <!-- Job Container --> }}
 {{! If logged in display all jobs avialable}}
-{{#each posts}}
-  <div class="d-inline-flex justify-content-around flex-wrap">
-    <div
-      class="card m-2"
-      style="width: 20rem; min-height: 450px; max-height: 450px"
-    >
-      <img
-        class="card-img-top"
-        src="https://des.az.gov/sites/default/files/job-searching.png?time=1644301518"
-        alt="Card image cap"
-      />
-      <div class="card-body">
-        <h5 class="card-title">{{job_title}}</h5>
-        <h6 class="card-title">{{job_type}}</h6>
-        <p class="card-text">{{post_tease job_description}}....</p>
-        <a href="/jobs/{{id}}" class="btn btn-info">Learn More</a>
+{{#if posts}}
+  {{#each posts}}
+    <div class="d-inline-flex justify-content-around flex-wrap">
+      <div
+        class="card m-2"
+        style="width: 20rem; min-height: 450px; max-height: 450px"
+      >
+        <img
+          class="card-img-top"
+          src="https://des.az.gov/sites/default/files/job-searching.png?time=1644301518"
+          alt="Card image cap"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{job_title}}</h5>
+          <h6 class="card-title">{{job_type}}</h6>
+          <p class="card-text">{{post_tease job_description}}</p>
+          <a href="/jobs/{{id}}" class="btn btn-info">Learn More</a>
+        </div>
       </div>
     </div>
-  </div>
-{{/each}}
+  {{/each}}
+{{else}}
+  <h3 class="d-flex justify-content-center">No posts yet...</h3>
+{{/if}}
 {{#if loggedIn}}{{else}}
   <h3 class="d-flex justify-content-center my-3">Log in to see more!</h3>
 {{/if}}

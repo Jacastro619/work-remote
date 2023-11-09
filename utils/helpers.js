@@ -2,8 +2,12 @@ const moment = require("moment");
 
 module.exports = {
   post_tease: (str) => {
-    const first50 = str.slice(0, 50);
-    return first50;
+    if (str.length >= 50) {
+      const first50 = str.slice(0, 50);
+      return `${first50}....`;
+    } else {
+      return str;
+    }
   },
 
   format_date: () => {

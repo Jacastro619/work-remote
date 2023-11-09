@@ -101,6 +101,10 @@ router.post("/post", withAuth, async (req, res) => {
   }
 });
 
+router.get("/edit/post", withAuth, (req, res) => {
+  res.render("edit");
+});
+
 router.put("/edit/post/:id", withAuth, async (req, res) => {
   try {
     const editPost = await Post.update(
