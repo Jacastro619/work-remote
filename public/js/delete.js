@@ -1,23 +1,19 @@
 const deleteHandler = async (event) => {
-  const confirmation = confirm(
-    "Are you sure you want to delete this post? This cannot be undone!"
-  );
+  console.log("test");
+  const id = event.target.getAttribute("data-id");
+  console.log(id);
+  const response = await fetch(`/delete/post/${id}`, {
+    method: "DELETE",
+  });
 
-  if (confirmation) {
-    const id = event.target.getAttribute("data-id");
-    console.log(id);
-    const response = await fetch(`/delete/post/${id}`, {
-      method: "DELETE",
-    });
-
-    if (response.ok) {
-      document.location.replace("/jobs/user/posts");
-    } else {
-      alert("Error in deleteing post");
-    }
+  if (response.ok) {
+    document.location.replace("/jobs/user/posts");
   } else {
-    return;
+    $("#deleteErr-alert").addClass("show");
+    setTimeout(() => {
+      $("#deleteErr-alert").removeClass("show");
+    }, 3000);
   }
 };
 
-document.querySelector("#deleteBtn").addEventListener("click", deleteHandler);
+$(document).on("click", "#confirm-btn", deleteHandler);

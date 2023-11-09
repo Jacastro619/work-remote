@@ -7,7 +7,10 @@ const postHandler = async (event) => {
   const budget = document.querySelector("#budget").value.trim();
 
   if (!title || !description || !type || !budget) {
-    alert("All fields must be filled out");
+    $("#fields-alert").addClass("show");
+    setTimeout(() => {
+      $("#fields-alert").removeClass("show");
+    }, 3000);
     return;
   }
 
@@ -20,8 +23,16 @@ const postHandler = async (event) => {
 
     if (response.ok) {
       document.location.replace("/jobs/user/posts");
+    } else if (response.status === 422) {
+      $("#budget-alert").addClass("show");
+      setTimeout(() => {
+        $("#budget-alert").removeClass("show");
+      }, 3000);
     } else {
-      alert("Error creating post");
+      $("#postErr-alert").addClass("show");
+      setTimeout(() => {
+        $("#postErr-alert").removeClass("show");
+      }, 3000);
     }
   }
 };

@@ -5,7 +5,10 @@ const loginhandler = async (event) => {
   const password = document.querySelector("#inputPassword").value.trim();
 
   if (!username || !password) {
-    alert("Please fill out both feilds");
+    $("#fields-alert").addClass("show");
+    setTimeout(() => {
+      $("#fields-alert").removeClass("show");
+    }, 3000);
     return;
   }
 
@@ -18,10 +21,16 @@ const loginhandler = async (event) => {
 
     if (response.ok) {
       document.location.replace("/");
-    } else if (response.status === 400) {
-      alert("Invalid Username or Password");
+    } else if (response.status === 404) {
+      $("#login-alert").addClass("show");
+      setTimeout(() => {
+        $("#login-alert").removeClass("show");
+      }, 3000);
     } else {
-      alert("Failed to log in");
+      $("#loginErr-alert").addClass("show");
+      setTimeout(() => {
+        $("#loginErr-alert").removeClass("show");
+      }, 3000);
     }
   }
 };
@@ -34,7 +43,10 @@ const signUpHandler = async (event) => {
   const password = document.querySelector("#signUpInputPassword").value.trim();
 
   if (!username || !email || !password) {
-    alert("All fields must be filled out");
+    $("#fields-alert").addClass("show");
+    setTimeout(() => {
+      $("#fields-alert").removeClass("show");
+    }, 3000);
     return;
   }
 
@@ -47,9 +59,20 @@ const signUpHandler = async (event) => {
     if (response.ok) {
       document.location.replace("/");
     } else if (response.status === 422) {
-      alert("Username is already in use");
+      $("#username-alert").addClass("show");
+      setTimeout(() => {
+        $("#username-alert").removeClass("show");
+      }, 3000);
+    } else if (response.status === 401) {
+      $("#email-alert").addClass("show");
+      setTimeout(() => {
+        $("#email-alert").removeClass("show");
+      }, 3000);
     } else {
-      alert("Failed to sign up");
+      $("#signup-alert").addClass("show");
+      setTimeout(() => {
+        $("#signup-alert").removeClass("show");
+      }, 3000);
     }
   }
 };
