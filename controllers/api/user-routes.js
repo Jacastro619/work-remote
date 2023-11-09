@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User } = require("../../models");
+const { User, Post } = require("../../models");
 
 const serverError = { message: "Internal Server Error" };
 const loginError = { message: "Invalid username or password" };
@@ -24,7 +24,10 @@ router.post("/", async (req, res) => {
       res.status(422).json({ message: "Username is already in use" });
     } else if (err.name === "SequelizeValidationError") {
       res.status(400).json(err);
+    } else if (err.errors[0].path === "email") {
+      res.status(401).json(err);
     } else {
+      console.log(err);
       res.status(500).json(serverError);
     }
   }
@@ -39,7 +42,7 @@ router.post("/login", async (req, res) => {
     });
 
     if (!dbUserInfo) {
-      res.status(400).json(serverError);
+      res.status(404).json(serverError);
       return;
     }
 
@@ -66,6 +69,16 @@ router.post("/logout", (req, res) => {
     req.session.destroy(() => {
       res.status(204).end();
     });
+  }
+});
+
+router.get("/post/:id", async (req, res) => {
+  try {
+    const post = await Post.findByPk(req.params.id);
+
+    res.status(200).json(post);
+  } catch (err) {
+    res.status(500).json(err);
   }
 });
 

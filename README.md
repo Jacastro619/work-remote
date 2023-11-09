@@ -1,83 +1,90 @@
-# work-remote
 
-![Site Langing Page](./assets/work-remote-logo.png)
+![Site Langing Page](./public/images/work-remote-logo.png)
 
-## Project Requirements: (see Example Proposal)
-YOU must be present for everyday of project week
+## Technology Used 
+<p float="left">
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
+<img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E">
+<img src="https://img.shields.io/badge/json-5E5C5C?style=for-the-badge&logo=json&logoColor=white">
+<img src="https://img.shields.io/badge/Node%20js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white">
+<img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white">
+<img src="https://img.shields.io/badge/Handlebars%20js-f0772b?style=for-the-badge&logo=handlebarsdotjs&logoColor=black">
+<img src="https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white">
+<img src="https://img.shields.io/badge/Sequelize-52B0E7?style=for-the-badge&logo=Sequelize&logoColor=white">
+<img src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white">
+<img src="https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3Eh">
+<img src="https://img.shields.io/badge/Canva-%2300C4CC.svg?&style=for-the-badge&logo=Canva&logoColor=white">
+<img src="https://img.shields.io/badge/Insomnia-5849be?style=for-the-badge&logo=Insomnia&logoColor=white">
+<img src="https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white">
+<img src="https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white">
+<img src="https://img.shields.io/badge/VSCode-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white">
+<img src="https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white">
+<img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">
+</p>
 
-Must use Node.js and Express.js to create a RESTful API
+## Description 
 
-Must be backed by a MySQL Database with a Sequelize ORM 
-
-Must have both GET and POST routes for retrieving and adding new data
-
-Must utilize at least one new library, package, or technology 
-that we haven’t discussed
-
-Must have folder structure that meets MVC Paradigm
-
-Must meet good quality coding standards (indentation, scoping, naming)
-
-Must be deployed using Heroku (with Data)
-
-Must include authentication (express-session and cookies)
-
-Must protect API keys and sensitive information with environment variables
-
-Must have a polished frontend / UI
-
-Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
-
-Must utilize Git Branching / Merging. Git Branches based on Feature Built / GitHub Project Card, minimum of 30 meaningful commits per contributor.
-
-## Nice To Haves:
-Use Handlebars.js as the template engine
-
-Use an existing public API to populate the database
-
-Create a migration strategy for sharing data across team members (seed files).
-
-Practice check-ins
-
-Standups
-
-Pairing
-
-Share your AH-HA (learning moments)
-
-Agile Playbacks
-
-## Presentation Requirements 
-You will also be responsible for preparing a 10-15 minute presentation.
-This will be a formal presentation.
-Every member of the group is expected to be able to speak to any section of the application
-Demo a Deployed Application
-One in which you explain in detail:
-Your overall application’s concept
-The motivation for its development
-Your design process
-The technologies you used 
-A demonstration of its functionality
-Directions for future development
-Presentation Template 
-
-Your presentations are a reflection of the work that you have done as a team. We should have a clear understanding of what the application does, why it was built, and how it was built before we ever experienced your application demo.
-
-Your presentation should translate easily to your informative README. 
-
-Presentation 
-Description of what it does w/ Visual Support: Gif / Image of your app doing it.
-Motivation for building this w/ Research you did: Into existing apps how is this different how is this the same?
-How did you build it out? w/ Infographic of your work-flow
-User Stories => Features => task => Branches => Git Commits
-User Stories w/ Gif of your application UI completing that user story
-Planning Wireframe w/ Side by Side of initial Wireframe vs. end product
-Task Assignment => Who did what?
-Team work-flow => Working Agreements Stand-ups Playbacks
-API Research….
-
-See Presentation Template for more details
+[Visit the Deployed "Work Remote" site](https://youtu.be/BFyeuLhjcPY) 👀
 
 
-Presentation Template
-https://docs.google.com/presentation/d/18rNcdRfPpaCxi-EBSGB9dcIg6RIrbvu9RsMitvUdAB4/edit?usp=sharing
+The Global Remote Workplace Services Market size is estimated to grow from USD 20.1 billion in 2022 to USD 58.5 billion by 2027, at a Compound Annual Growth Rate (CAGR) of 23.8% during the forecast period, according to a report by MarketsandMarkets.  This is a HUGE market (currently 20.1 Billion),  that is increasing at a staggering rate (23.8% annually).  
+
+How does a person find remote work opportunities? There needs to be a way for people needing remote work to be done to find people capable of doing that work. 
+
+This project which we have named “Work Remote” provides the ability for people who need remote work to be done to post their projects.  And for people looking to do remote work, to find those projects and contact the person who posted it. "Work Remote" is a job board for remote workers.
+
+
+![Site Langing Page](./site.gif)
+
+
+## Table of Contents 
+
+* [How To Install](#how-to-install)
+* [Usage & Features](#usage-and-features)
+* [Learning Points](#learning-points)
+* [Author Info](#author-info)
+* [License](#license)
+* [Badges](#badges)
+
+
+## How To Install
+
+1. Copy this GitHub repository down to your local drive. 
+2. Open the folder where you placed the files from this repository on your local drive with your Git terminal. Make sure you can see the server.js file and also the package.json file.
+3. Type “npm install” to install all the necessary dependencies that are called out in the package.json file.
+4. Type “node server” If you have everything set up correctly you will see the message “now listening on http://localhost:3001” This means that your MySQL server database is up and ready to send and receive information from your browser.
+5. Open your browser and go to http://localhost:3001 and you will be able to use your own instance of Work Remote.
+
+## Usage and Features
+
+## Learning Points 
+
+## Author Info
+
+### Jorge Castro
+
+<a href="mailto: jorgecastro619@gmail.com" target="_blank"><img align="center" src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="paperpatch"/></a>
+<a href="https://www.linkedin.com/in/jorge-castro-2a9545177/" target="_blank"><img align="center" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="paperpatch"/></a>
+<a href="https://github.com/Jacastro619" target="_blank"><img align="center" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="paperpatch"/></a>
+
+### Nhi Hoang
+
+<a href="mailto: evie.h0325@gmail.com" target="_blank"><img align="center" src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="paperpatch"/></a>
+<a href="https://www.linkedin.com/in/ynhihoang/" target="_blank"><img align="center" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="paperpatch"/></a>
+<a href="https://github.com/eviehoang" target="_blank"><img align="center" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="paperpatch"/></a>
+
+### Steven Sills II
+
+<a href="mailto: stevensills2@gmail.com" target="_blank"><img align="center" src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="paperpatch"/></a>
+<a href="https://www.linkedin.com/in/steven-sills-ii-90781b53/" target="_blank"><img align="center" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="paperpatch"/></a>
+<a href="https://apixa25.github.io/steven-sills-portfolio/" target="_blank"><img align="center" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="paperpatch"/></a>
+
+
+## License
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+
+## Badges
+
+

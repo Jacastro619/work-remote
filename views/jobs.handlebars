@@ -10,32 +10,61 @@
       aria-haspopup="true"
       aria-expanded="false"
     >
-      Dropdown button
+      Filter By Job Type
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="#">Action</a>
-      <a class="dropdown-item" href="#">Another action</a>
-      <a class="dropdown-item" href="#">Something else here</a>
+      <a class="dropdown-item" href="/jobs">See All</a>
+      <a class="dropdown-item" href="/jobs/type/Content Writing">Content Writing</a>
+      <a class="dropdown-item" href="/jobs/type/Graphic Design">Graphic Design</a>
+      <a class="dropdown-item" href="/jobs/type/Web Development">Web Development</a>
+      <a class="dropdown-item" href="/jobs/type/Digital Marketing">Digital
+        Marketing</a>
+      <a class="dropdown-item" href="/jobs/type/Social Media Management">Social
+        Media Management</a>
+      <a class="dropdown-item" href="/jobs/type/Copywriting">Copywriting</a>
+      <a class="dropdown-item" href="/jobs/type/Virtual Assistant">Virtual
+        Assistant</a>
+      <a
+        class="dropdown-item"
+        href="/jobs/type/E-Commerce and Dropshipping"
+      >E-Commerce and Dropshipping</a>
+      <a
+        class="dropdown-item"
+        href="/jobs/type/Online Teaching and Tutoring"
+      >Online Teaching and Tutoring</a>
+      <a class="dropdown-item" href="/jobs/type/Data Entry and Analysis">Data
+        Entry and Analysis</a>
+      <a class="dropdown-item" href="/jobs/type/Other">Other</a>
     </div>
   </div>
 </div>
 
 {{! <!-- Job Container --> }}
 {{! If logged in display all jobs avialable}}
-{{#each posts}}
-  <div class="d-inline-flex justify-content-around flex-wrap">
-    <div class="card m-2" style="width: 20rem;">
-      <img
-        class="card-img-top"
-        src="https://des.az.gov/sites/default/files/job-searching.png?time=1644301518"
-        alt="Card image cap"
-      />
-      <div class="card-body">
-        <h5 class="card-title">{{job_title}}</h5>
-        <h6 class="card-title">{{job_type}}</h6>
-        <p class="card-text">{{post_tease job_description}}....</p>
-        <a href="#" class="btn btn-info">Learn More</a>
+{{#if posts}}
+  {{#each posts}}
+    <div class="d-inline-flex justify-content-around flex-wrap">
+      <div
+        class="card m-2"
+        style="width: 20rem; min-height: 450px; max-height: 450px"
+      >
+        <img
+          class="card-img-top"
+          src="https://des.az.gov/sites/default/files/job-searching.png?time=1644301518"
+          alt="Card image cap"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{job_title}}</h5>
+          <h6 class="card-title">{{job_type}}</h6>
+          <p class="card-text">{{post_tease job_description}}</p>
+          <a href="/jobs/{{id}}" class="btn btn-info">Learn More</a>
+        </div>
       </div>
     </div>
-  </div>
-{{/each}}
+  {{/each}}
+{{else}}
+  <h3 class="d-flex justify-content-center">No posts yet...</h3>
+{{/if}}
+{{#if loggedIn}}{{else}}
+  <h3 class="d-flex justify-content-center my-3">Log in to see more!</h3>
+{{/if}}
