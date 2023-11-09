@@ -5,10 +5,16 @@ const logoutHandler = async () => {
   });
 
   if (response.ok) {
-    alert("You have been successfully logged out");
-    document.location.replace("/");
+    $("#logout-success").addClass("show");
+    setTimeout(() => {
+      document.location.replace("/");
+      $("#logout-success").removeClass("show");
+    }, 1000);
   } else {
-    alert("Cannot logout");
+    $("#logout-alert").addClass("show");
+    setTimeout(() => {
+      $("#logout-alert").removeClass("show");
+    }, 3000);
   }
 };
 
