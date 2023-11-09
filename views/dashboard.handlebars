@@ -4,21 +4,22 @@
     <div class="d-inline-flex justify-content-around flex-wrap">
       <div
         class="card m-2"
-        style="width: 20rem;  min-height: 450px; max-height: 450px"
+        style="width: 20rem;  min-height: 500px; max-height: 450px"
       >
         <img
-          class="card-img-top"
-          src="https://des.az.gov/sites/default/files/job-searching.png?time=1644301518"
+          class="card-img-top p-1"
+          src="/images/job-type-tall/{{job_type}}.jpg"
+          style="max-height: 275px;"
           alt="Card image cap"
         />
         <div class="card-body">
           <h5 class="card-title">{{job_title}}</h5>
           <h6 class="card-title">{{job_type}}</h6>
           <p class="card-text">{{post_tease job_description}}....</p>
-          <a href="/jobs/{{id}}" class="btn btn-info">Learn More</a>
           <a
             href="/edit/post/{{id}}"
             class="btn btn-warning ml-1"
+            style="min-width: 100px;"
             id="editBtn"
           >Edit</a>
           <button
@@ -27,6 +28,7 @@
             data-bs-target="#confirmDel-modal"
             data-id="{{id}}"
             class="btn btn-danger float-right"
+            style="min-width: 100px;"
             id="deleteBtn"
           >Delete</button>
           <div
@@ -39,7 +41,10 @@
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="confirmDel-modalLabel">Confirm Deletion</h1>
+                  <h1
+                    class="modal-title fs-5"
+                    id="confirmDel-modalLabel"
+                  >Confirm Deletion</h1>
                   <button
                     type="button"
                     class="btn-close"
