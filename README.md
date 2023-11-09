@@ -33,7 +33,7 @@ The Global Remote Workplace Services Market size is estimated to grow from USD 2
 
 How does a person find remote work opportunities? There needs to be a way for people needing remote work to be done to find people capable of doing that work. 
 
-This project which we have named “Work Remote” provides the ability for people who need remote work to be done to post their projects.  And for people looking to do remote work, to find those projects and contact the person who posted it. Work Remote is a job board for remote workers.
+This project which we have named “Work Remote” provides the ability for people who need remote work to be done to post their projects.  And for people looking to do remote work, to find those projects and contact the person who posted it. "Work Remote" is a job board for remote workers.
 
 
 ![Site Langing Page](./site.gif)
@@ -52,22 +52,15 @@ This project which we have named “Work Remote” provides the ability for peop
 
 ## How To Install
 
+1. Copy this GitHub repository down to your local drive. 
+2. Open the folder where you placed the files from this repository on your local drive with your Git terminal. Make sure you can see the server.js file and also the package.json file.
+3. Type “npm install” to install all the necessary dependencies that are called out in the package.json file.
+4. Type “node server” If you have everything setup correctly you will see the message “now listening on http://localhost:3001” This means that your MySQL server database is up and ready to send and receive information from your browser.
+5. Open your browser and go to http://localhost:3001 and you will be able to use your own instance of Work Remote.
+
 ## Usage
 
 ## Learning Points 
-
-
-This is a good place to Explain what you Learned by creating this application.
-This is a great way to remind about all of the Complex Skills you now have.
-If the user is less experienced than you:
-They will be impressed by what you can do!
-
-If the user is more experienced than you:
-They will be impressed by what you can do!
-
-Remember, it is easy to forget exactly how Valuable and Impressive your skills are, as well as How Much You’ve Learned!
-So quantify that here!
-
 
 ## Author Info
 
@@ -93,6 +86,8 @@ So quantify that here!
 ## License
 
 ## Badges
+
+
 
 ## Features
 
