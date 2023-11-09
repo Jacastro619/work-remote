@@ -3,8 +3,8 @@
 
 ## Technology Used 
 <p float="left">
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
 <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E">
 <img src="https://img.shields.io/badge/json-5E5C5C?style=for-the-badge&logo=json&logoColor=white">
 <img src="https://img.shields.io/badge/Node%20js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white">
@@ -19,9 +19,8 @@
 <img src="https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white">
 <img src="https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white">
 <img src="https://img.shields.io/badge/VSCode-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white">
- <img src="https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white">
+<img src="https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white">
 <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">
- 
 </p>
 
 ## Description 
@@ -41,24 +40,23 @@ This project which we have named “Work Remote” provides the ability for peop
 
 ## Table of Contents 
 
-
 * [How To Install](#how-to-install)
-* [Usage](#usage)
+* [Usage & Features](#usage-and-features)
 * [Learning Points](#learning-points)
 * [Author Info](#author-info)
 * [License](#license)
 * [Badges](#badges)
-* [Features](#features)
+
 
 ## How To Install
 
 1. Copy this GitHub repository down to your local drive. 
 2. Open the folder where you placed the files from this repository on your local drive with your Git terminal. Make sure you can see the server.js file and also the package.json file.
 3. Type “npm install” to install all the necessary dependencies that are called out in the package.json file.
-4. Type “node server” If you have everything setup correctly you will see the message “now listening on http://localhost:3001” This means that your MySQL server database is up and ready to send and receive information from your browser.
+4. Type “node server” If you have everything set up correctly you will see the message “now listening on http://localhost:3001” This means that your MySQL server database is up and ready to send and receive information from your browser.
 5. Open your browser and go to http://localhost:3001 and you will be able to use your own instance of Work Remote.
 
-## Usage
+## Usage and Features
 
 ## Learning Points 
 
@@ -84,11 +82,9 @@ This project which we have named “Work Remote” provides the ability for peop
 
 
 ## License
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 
 ## Badges
 
 
-
-## Features
-
-If your project has a lot of features, consider adding a heading called "Features" and listing them there.
