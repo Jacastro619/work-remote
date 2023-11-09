@@ -101,8 +101,9 @@ router.post("/post", withAuth, async (req, res) => {
 
     res.status(200).json(addPost);
   } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
+    if (err.errors[0].path === "job_budget") {
+      res.status(422).json(err);
+    } else res.status(500).json(err);
   }
 });
 
@@ -129,7 +130,9 @@ router.put("/edit/post/:id", withAuth, async (req, res) => {
     );
     res.status(200).json(editPost);
   } catch (err) {
-    res.status(500).json(err);
+    if (err.errors[0].path === "job_budget") {
+      res.status(422).json(err);
+    } else res.status(500).json(err);
   }
 });
 

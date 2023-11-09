@@ -19,3 +19,10 @@ body {
 #roundedSquare {
   border-radius: 25px;
 }
+
+.custom-alert {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  text-align: center;
+}

@@ -5,7 +5,10 @@ const renderPost = async () => {
   const response = await fetch(`/api/user/post/${id}`);
 
   if (!response.ok) {
-    alert("Error while trying to retrieve data");
+    $("#postRetErr-alert").addClass("show");
+    setTimeout(() => {
+      $("#postRetErr-alert").removeClass("show");
+    }, 3000);
     return;
   }
 
@@ -33,7 +36,10 @@ const editHandler = async (event) => {
   const upBudget = document.querySelector("#budget").value.trim();
 
   if (!upTitle || !upDescription || !upType || !upBudget) {
-    alert("All fields must be filled out");
+    $("#fields-alert").addClass("show");
+    setTimeout(() => {
+      $("#fields-alert").removeClass("show");
+    }, 3000);
     return;
   }
 
@@ -46,8 +52,16 @@ const editHandler = async (event) => {
 
     if (response.ok) {
       document.location.replace("/jobs/user/posts");
+    } else if (response.status === 422) {
+      $("#budget-alert").addClass("show");
+      setTimeout(() => {
+        $("#budget-alert").removeClass("show");
+      }, 3000);
     } else {
-      alert("Error creating post");
+      $("#postErr-alert").addClass("show");
+      setTimeout(() => {
+        $("#postErr-alert").removeClass("show");
+      }, 3000);
     }
   }
 };
