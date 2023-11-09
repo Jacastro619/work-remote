@@ -1,14 +1,22 @@
 const deleteHandler = async (event) => {
-  const id = event.target.getAttribute("data-id");
-  console.log(id);
-  const response = await fetch(`/delete/post/${id}`, {
-    method: "DELETE",
-  });
+  const confirmation = confirm(
+    "Are you sure you want to delete this post? This cannot be undone!"
+  );
 
-  if (response.ok) {
-    document.location.replace("/jobs/user/posts");
+  if (confirmation) {
+    const id = event.target.getAttribute("data-id");
+    console.log(id);
+    const response = await fetch(`/delete/post/${id}`, {
+      method: "DELETE",
+    });
+
+    if (response.ok) {
+      document.location.replace("/jobs/user/posts");
+    } else {
+      alert("Error in deleteing post");
+    }
   } else {
-    alert("Error in deleteing post");
+    return;
   }
 };
 
