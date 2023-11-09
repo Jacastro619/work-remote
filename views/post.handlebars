@@ -1,40 +1,73 @@
-{{!-- Page to Post Job --}}
+{{! Page to Post Job }}
 
 <div class="d-flex justify-content-center pt-4">
-    <div class="col-9">
-        <h3>Create a Job Post:</h3>
+  <div class="col-9">
+    <h3>Create a Job Post:</h3>
 
-        <form class="form new-job-form mb-1">
-            <div class="form-group">
-                <input class="form-input col-4" type="text" id="job-title" name="job-title" placeholder="Job Title" />
-            </div>
+    <form id="post-form" class="form new-job-form mb-1">
+      <div class="form-group">
+        <input
+          class="form-input col-4"
+          type="text"
+          id="job-title"
+          name="job-title"
+          placeholder="Job Title"
+          maxlength="50"
+        />
+      </div>
 
-            <div class="form-group">
-                <textarea class="form-input col-12" id="job-desc" name="job-desc" placeholder="Job Description"
-                    rows="5"></textarea>
-            </div>
+      <div class="form-group">
+        <textarea
+          class="form-input col-12"
+          id="job-desc"
+          name="job-desc"
+          placeholder="Job Description"
+          rows="5"
+          maxlength="500"
+        ></textarea>
+      </div>
 
-            <!-- Job Types -->
-            <h6>Job Types:</h6>
-            <select class="custom-select col-5" required>
-                <option value="">Open To Select Job Type</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-            </select>
+      <!-- Job Types -->
+      <h6>Job Types:</h6>
+      <select id="job-type" class="custom-select col-5" required>
+        <option value="">Open To Select Job Type</option>
+        <option value="Content Writing">Content Writing</option>
+        <option value="Graphic Design">Graphic Design</option>
+        <option value="Web Development">Web Development</option>
+        <option value="Digital Marketing">Digital Marketing</option>
+        <option value="Social Media Management">Social Media Management</option>
+        <option value="Copywriting">Copywriting</option>
+        <option value="Virtual Assistant">Virtual Assistant</option>
+        <option value="E-Commerce and Dropshipping">E-Commerce and Dropshipping</option>
+        <option value="Online Teaching and Tutoring">Online Teaching and
+          Tutoring</option>
+        <option value="Data Entry and Analysis">Data Entry and Analysis</option>
+        <option value="Other">Other</option>
+      </select>
 
-            <!-- Budget -->
-            <h6 class="mt-4">Budget:</h6>
-            <div class="form-group">
-                <input class="form-input col-4" type="text" id="budget" name="budget" placeholder="Budget" />
-                <small id="helpInfo" class="text-muted pl-1">
-                    Enter amount as an amount without the $ sign.
-                </small>
-            </div>
+      <!-- Budget -->
+      <h6 class="mt-4">Budget:</h6>
+      <div class="form-group">
+        <input
+          class="form-input col-4"
+          type="text"
+          id="budget"
+          name="budget"
+          placeholder="Budget"
+        />
+        <small id="helpInfo" class="text-muted pl-1">
+          Enter amount as an amount without the $ sign.
+        </small>
+      </div>
 
-            <div class="form-group">
-                <button type="submit" class="btn btn-primary float-right">Create</button>
-            </div>
-        </form>
-    </div>
+      <div class="form-group">
+        <button
+          type="submit"
+          class="btn btn-primary float-right"
+        >Create</button>
+      </div>
+    </form>
+  </div>
 </div>
+
+<script src="/js/post.js"></script>

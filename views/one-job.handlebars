@@ -1,28 +1,37 @@
-{{!-- To See ONE job --}}
+{{! To See ONE job }}
 <div class="d-flex justify-content-center pt-4 col-12">
-    <div class="col-9 mr-5">
-        <h3>JOB NAME</h3>
-        <h5>Job Type: {{Taken From Input}}</h5>
-        <h6 class="mt-4 mb-1">About This Job:</h6>
-        <div class="border border-secondary p-3 col-12 justify-content-center" id="rounded">
-            <small class="p-1">{{description}}</small>
-        </div>
-
-        <!-- Budget -->
-        <h6 class="mt-4 mb-1">Budget:</h6>
-        <div class="border border-secondary p-1 col-1 justify-content-center" id="rounded">
-            <small class="p-1">Amount</small>
-        </div>
-
-        <!-- Contact Info -->
-        <h6 class="mt-4 mb-1">Contact:</h6>
-        <div>
-            <button type="button" class="btn btn-info btn-sm">E-mail Employer</button>
-        </div>
+  <div class="col-9 mr-5">
+    <h3>{{post.job_title}}</h3>
+    <h5>Job Type: {{post.job_type}}</h5>
+    <h6 class="mt-4 mb-1">About This Job:</h6>
+    <div
+      class="border border-secondary p-2 col-12 justify-content-center"
+      id="rounded"
+    >
+      <p>{{post.job_description}}</p>
     </div>
 
-    <div class="card border-0 text-right col-3" style="width: 20rem;">
-        <h5 class="card-title m-0">{{Poster Username}}</h5>
-        <p class="card-text m-0">{{Date Posted}}</p>
+    <!-- Budget -->
+    <h6 class="mt-4 mb-1">Budget:</h6>
+    <div
+      class="border border-secondary p-1 col-1 justify-content-center"
+      id="rounded"
+    >
+      <small> ${{post.job_budget}}</small>
     </div>
+
+    <!-- Contact Info -->
+    <h6 class="mt-4 mb-1">Contact:</h6>
+    <div>
+      <button
+        type="button"
+        class="btn btn-info btn-sm"
+      >{{post.user.email}}</button>
+    </div>
+  </div>
+
+  <div class="card border-0 text-right col-3" style="width: 20rem;">
+    <h5 class="card-title m-0">{{post.user.username}}</h5>
+    <p class="card-text m-0">{{post.timestamp}}</p>
+  </div>
 </div>

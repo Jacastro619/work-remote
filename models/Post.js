@@ -18,10 +18,16 @@ Post.init(
     job_title: {
       type: DataTypes.STRING,
       allowNull: false,
+      validate: {
+        len: [0, 60],
+      },
     },
     job_description: {
       type: DataTypes.TEXT,
       allowNull: false,
+      validate: {
+        len: [0, 525],
+      },
     },
     job_budget: {
       type: DataTypes.DECIMAL,
