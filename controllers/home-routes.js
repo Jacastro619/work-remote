@@ -17,13 +17,33 @@ router.get("/jobs", async (req, res) => {
 
     let posts = dbPostData.map((post) => post.get({ plain: true }));
     if (!req.session.loggedIn) {
-      posts = posts.slice(0, 6);
+      posts = posts.slice(0, 6).reverse();
       res.render("jobs", { posts, loggedIn: req.session.loggedIn });
       return;
     }
+    posts.reverse();
     // shows all the jobs if the user is logged in
     res.render("jobs", { posts, loggedIn: req.session.loggedIn });
     // res.json(posts);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get("/jobs/type/:name", withAuth, async (req, res) => {
+  console.log(req.params);
+  try {
+    const dbJobTypeData = await Post.findAll({
+      where: {
+        job_type: req.params.name,
+      },
+    });
+
+    const posts = dbJobTypeData.map((post) => post.get({ plain: true }));
+
+    posts.reverse();
+
+    res.render("jobs", { posts, loggedIn: req.session.loggedIn });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -55,6 +75,8 @@ router.get("/jobs/user/posts", withAuth, async (req, res) => {
 
     const posts = dbPostData.map((post) => post.get({ plain: true }));
 
+    posts.reverse();
+
     res.render("dashboard", { posts, loggedIn: req.session.loggedIn });
     // res.json(dbPostData);
   } catch (err) {
@@ -62,13 +84,17 @@ router.get("/jobs/user/posts", withAuth, async (req, res) => {
   }
 });
 
+router.get("/post", withAuth, (req, res) => {
+  res.render("post");
+});
+
 router.post("/post", withAuth, async (req, res) => {
   try {
     const addPost = await Post.create({
-      job_type: req.body.job_type,
-      job_title: req.body.job_title,
-      job_description: req.body.job_description,
-      job_budget: req.body.job_budget,
+      job_type: req.body.type,
+      job_title: req.body.title,
+      job_description: req.body.description,
+      job_budget: req.body.budget,
       timestamp: `Created on ${format_date()}`,
       user_id: req.session.user_id,
     });
@@ -80,14 +106,18 @@ router.post("/post", withAuth, async (req, res) => {
   }
 });
 
+router.get("/edit/post/:id", withAuth, (req, res) => {
+  res.render("edit");
+});
+
 router.put("/edit/post/:id", withAuth, async (req, res) => {
   try {
     const editPost = await Post.update(
       {
-        job_type: req.body.job_type,
-        job_title: req.body.job_title,
-        job_description: req.body.job_description,
-        job_budget: req.body.job_budget,
+        job_type: req.body.upType,
+        job_title: req.body.upTitle,
+        job_description: req.body.upDescription,
+        job_budget: req.body.upBudget,
         timestamp: `Updated on ${format_date()}`,
         user_id: req.session.user_id,
       },

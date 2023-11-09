@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User } = require("../../models");
+const { User, Post } = require("../../models");
 
 const serverError = { message: "Internal Server Error" };
 const loginError = { message: "Invalid username or password" };
@@ -66,6 +66,16 @@ router.post("/logout", (req, res) => {
     req.session.destroy(() => {
       res.status(204).end();
     });
+  }
+});
+
+router.get("/post/:id", async (req, res) => {
+  try {
+    const post = await Post.findByPk(req.params.id);
+
+    res.status(200).json(post);
+  } catch (err) {
+    res.status(500).json(err);
   }
 });
 
