@@ -85,7 +85,7 @@ router.get("/jobs/user/posts", withAuth, async (req, res) => {
 });
 
 router.get("/post", withAuth, (req, res) => {
-  res.render("post");
+  res.render("post", { loggedIn: req.session.loggedIn });
 });
 
 router.post("/post", withAuth, async (req, res) => {
@@ -108,7 +108,7 @@ router.post("/post", withAuth, async (req, res) => {
 });
 
 router.get("/edit/post/:id", withAuth, (req, res) => {
-  res.render("edit");
+  res.render("edit", { loggedIn: req.session.loggedIn });
 });
 
 router.get("/about", (req, res) => {
