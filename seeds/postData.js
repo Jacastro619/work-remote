@@ -1,5 +1,7 @@
+// Import the Post model
 const { Post } = require("../models");
 
+//Create an array of test data to seed the database with
 const postData = [
   {
     job_type: "Web Development & Design",
@@ -208,6 +210,7 @@ const postData = [
   // Continue adding more entries as needed
 ];
 
+// This function bulk creates posts with everything in the array and then we export the function
 const seedPosts = async () => {
   await Post.bulkCreate(postData);
 };
