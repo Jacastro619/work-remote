@@ -78,14 +78,13 @@ router.get("/jobs/user/posts", withAuth, async (req, res) => {
     posts.reverse();
 
     res.render("dashboard", { posts, loggedIn: req.session.loggedIn });
-    // res.json(dbPostData);
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
 router.get("/post", withAuth, (req, res) => {
-  res.render("post");
+  res.render("post", { loggedIn: req.session.loggedIn });
 });
 
 router.post("/post", withAuth, async (req, res) => {
@@ -108,7 +107,11 @@ router.post("/post", withAuth, async (req, res) => {
 });
 
 router.get("/edit/post/:id", withAuth, (req, res) => {
-  res.render("edit");
+  res.render("edit", { loggedIn: req.session.loggedIn });
+});
+
+router.get("/about", (req, res) => {
+  res.render("aboutme");
 });
 
 router.put("/edit/post/:id", withAuth, async (req, res) => {
