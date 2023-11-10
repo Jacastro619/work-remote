@@ -1,3 +1,4 @@
+// This file fowards to next file in filepath
 const router = require("express").Router();
 const userRoutes = require("./user-routes");
 

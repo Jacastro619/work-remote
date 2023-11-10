@@ -1,8 +1,11 @@
+// Importing required modules
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
+// Extending Model with Post class
 class Post extends Model {}
 
+// Initiating and configuring the Post model
 Post.init(
   {
     id: {
@@ -56,4 +59,5 @@ Post.init(
   }
 );
 
+// Exporting Post model
 module.exports = Post;

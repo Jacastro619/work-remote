@@ -1,5 +1,7 @@
+// Import the User model
 const { User } = require("../models");
 
+//Create an array of test data to seed the database with
 const userData = [
   {
     username: "Steve123",
@@ -103,6 +105,7 @@ const userData = [
   },
 ];
 
+// This function bulk creates users with everything in the array and then we export the function
 const seedUsers = async () => {
   await User.bulkCreate(userData, {
     individualHooks: true,
