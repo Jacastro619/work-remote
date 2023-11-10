@@ -52,9 +52,10 @@ This project which we have named “Work Remote” provides the ability for peop
 
 1. Copy this GitHub repository down to your local drive. 
 2. Open the folder where you placed the files from this repository on your local drive with your Git terminal. Make sure you can see the server.js file and also the package.json file.
-3. Type “npm install” to install all the necessary dependencies that are called out in the package.json file.
-4. Type “node server” If you have everything set up correctly you will see the message “now listening on http://localhost:3001” This means that your MySQL server database is up and ready to send and receive information from your browser.
-5. Open your browser and go to http://localhost:3001 and you will be able to use your own instance of Work Remote.
+3. Type "run npm init" this will install the necessary node.js modules.
+4. Type “npm install” to install all the necessary dependencies that are called out in the package.json file.
+5. Type “node server” If you have everything set up correctly you will see the message “now listening on http://localhost:3001” This means that your MySQL server database is up and ready to send and receive information from your browser.
+6. Open your browser and go to http://localhost:3001 and you will be able to use your own instance of Work Remote.
 
 ## Usage and Features
 
