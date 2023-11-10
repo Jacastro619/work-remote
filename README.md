@@ -58,6 +58,26 @@ This project which we have named “Work Remote” provides the ability for peop
 
 ## Usage and Features
 
+This project has three separate users in mind:
+
+1. All Users
+2. The Job Post User (Client)
+3. The Job Viewer User (Worker)
+
+#### Concerning All Users:
+
+All users can go to the site and are limited to viewing the 6 most recent project posts without being logged in.  In order to see all the job posts or to make a job post a user must make an account by entering their user name, email, and password. This information is saved to the server.  For security purposes, the user's password is made into a hash by using npm bcrypt and is stored on the server not as a raw password but as a hash.
+
+When a user is a returning user (coming back to the site for a 2nd or more time) when they enter their username and password, bcrypt hashes the password they entered and then looks for a matching hash and username on the server. If a match is found they are logged in.  Once logged in the users behavior defines if they are now a Client or Worker.
+
+#### Concerning Client Users
+Once logged in, a Client User can go to “My Job Listing” or “Post Job” if they would like to view and edit their existing job posts or make a new job post respectively. If a Client clicks on “My Job Listing” they are taken to a list of all of their current job posts.  Once there, each job has the option to “Learn More” (Which shows the entirety of that job post as it is, and is not editable). “Edit” (Which shows the job in an editor where ALL of the job properties are editable. This is really nice if a user wants to modify the requirements of a job, maybe even change the type of job, and can of course modify their budget).
+
+#### Concerning Worker Users
+Once logged in, a Worker User can go to “See Jobs” and the entire list of all available jobs will be shown to them.  At the same time, a drop-down sort function is given to them at the top of the page where they can select the jobs to be displayed to them by category, where only the category of job they choose will then be shown to them. 
+
+The Worker User can then select a job to view by clicking on “Learn More”.  That will display for them the listing of the job with all of the details including a contact email at the bottom where if they are interested in the work they can email the job poster.  If they click on the email button their e-mail editor will automatically open and the Clients email will be automatically populated. 
+
 ## Learning Points 
 
 ## Author Info
