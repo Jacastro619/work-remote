@@ -35,7 +35,7 @@ How does a person find remote work opportunities? There needs to be a way for pe
 This project which we have named “Work Remote” provides the ability for people who need remote work to be done to post their projects.  And for people looking to do remote work, to find those projects and contact the person who posted it. "Work Remote" is a job board for remote workers.
 
 
-![Site Langing Page](./site.gif)
+![Login And Modify](./public/images/images-for-readme/work-remote-login-view-all.gif)
 
 
 ## Table of Contents 
