@@ -20,7 +20,7 @@ const loginhandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace("/");
+      document.location.replace("/jobs/user/posts");
     } else if (response.status === 404) {
       $("#login-alert").addClass("show");
       setTimeout(() => {

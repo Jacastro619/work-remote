@@ -78,7 +78,6 @@ router.get("/jobs/user/posts", withAuth, async (req, res) => {
     posts.reverse();
 
     res.render("dashboard", { posts, loggedIn: req.session.loggedIn });
-    // res.json(dbPostData);
   } catch (err) {
     res.status(500).json(err);
   }
