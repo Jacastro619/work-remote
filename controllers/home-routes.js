@@ -133,7 +133,7 @@ router.get("/edit/post/:id", withAuth, (req, res) => {
 
 // This endpoint will render the about page
 router.get("/about", (req, res) => {
-  res.render("aboutme");
+  res.render("aboutme", { loggedIn: req.session.loggedIn });
 });
 
 // This is the endpoint that will update an existing post
