@@ -1,6 +1,6 @@
 {{! Shows All Jobs }}
 {{! <!-- Filter Menu --> }}
-<div class="container">
+<div class="container d-flex justify-content-between align-items-center">
   <div class="dropdown">
     <button
       class="btn btn-info dropdown-toggle"
@@ -16,18 +16,19 @@
       <a class="dropdown-item" href="/jobs">See All</a>
       <a class="dropdown-item" href="/jobs/type/Content Writing">Content Writing</a>
       <a class="dropdown-item" href="/jobs/type/Graphic Design">Graphic Design</a>
-      <a class="dropdown-item" href="/jobs/type/Web Development">Web Development</a>
+      <a class="dropdown-item" href="/jobs/type/Web Development & Design">Web
+        Development & Design</a>
       <a class="dropdown-item" href="/jobs/type/Digital Marketing">Digital
         Marketing</a>
-      <a class="dropdown-item" href="/jobs/type/Social Media Management">Social
-        Media Management</a>
+      <a class="dropdown-item" href="/jobs/type/Social Media Marketing">Social
+        Media Marketing</a>
       <a class="dropdown-item" href="/jobs/type/Copywriting">Copywriting</a>
-      <a class="dropdown-item" href="/jobs/type/Virtual Assistant">Virtual
-        Assistant</a>
+      <a class="dropdown-item" href="/jobs/type/Virtual Assistance">Virtual
+        Assistance</a>
       <a
         class="dropdown-item"
-        href="/jobs/type/E-Commerce and Dropshipping"
-      >E-Commerce and Dropshipping</a>
+        href="/jobs/type/E-Commerce & Dropshipping"
+      >E-Commerce & Dropshipping</a>
       <a
         class="dropdown-item"
         href="/jobs/type/Online Teaching and Tutoring"
@@ -37,6 +38,7 @@
       <a class="dropdown-item" href="/jobs/type/Other">Other</a>
     </div>
   </div>
+  <h1>Current Available Jobs</h1>
 </div>
 
 {{! <!-- Job Container --> }}
@@ -46,11 +48,12 @@
     <div class="d-inline-flex justify-content-around flex-wrap">
       <div
         class="card m-2"
-        style="width: 20rem; min-height: 450px; max-height: 450px"
+        style="width: 20rem; min-height: 500px; max-height: 500px"
       >
         <img
-          class="card-img-top"
-          src="https://des.az.gov/sites/default/files/job-searching.png?time=1644301518"
+          class="card-img-top p-1"
+          src="/images/job-type-tall/{{job_type}}.jpg"
+          style="max-height: 275px;"
           alt="Card image cap"
         />
         <div class="card-body">
