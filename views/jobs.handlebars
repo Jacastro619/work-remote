@@ -1,73 +1,55 @@
 {{! Shows All Jobs }}
 {{! <!-- Filter Menu --> }}
 <div class="container d-flex justify-content-between align-items-center">
-  <div class="dropdown">
-    <button
-      class="btn btn-info dropdown-toggle"
-      type="button"
-      id="dropdownMenuButton"
-      data-toggle="dropdown"
-      aria-haspopup="true"
-      aria-expanded="false"
-    >
-      Filter By Job Type
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="/jobs">See All</a>
-      <a class="dropdown-item" href="/jobs/type/Content Writing">Content Writing</a>
-      <a class="dropdown-item" href="/jobs/type/Graphic Design">Graphic Design</a>
-      <a class="dropdown-item" href="/jobs/type/Web Development & Design">Web
-        Development & Design</a>
-      <a class="dropdown-item" href="/jobs/type/Digital Marketing">Digital
-        Marketing</a>
-      <a class="dropdown-item" href="/jobs/type/Social Media Marketing">Social
-        Media Marketing</a>
-      <a class="dropdown-item" href="/jobs/type/Copywriting">Copywriting</a>
-      <a class="dropdown-item" href="/jobs/type/Virtual Assistance">Virtual
-        Assistance</a>
-      <a
-        class="dropdown-item"
-        href="/jobs/type/E-Commerce & Dropshipping"
-      >E-Commerce & Dropshipping</a>
-      <a
-        class="dropdown-item"
-        href="/jobs/type/Online Teaching and Tutoring"
-      >Online Teaching and Tutoring</a>
-      <a class="dropdown-item" href="/jobs/type/Data Entry and Analysis">Data
-        Entry and Analysis</a>
-      <a class="dropdown-item" href="/jobs/type/Other">Other</a>
+    <h1 class="p-1">Current Available Jobs</h1>
+    <div class="dropdown ">
+      <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        Filter By Job Type
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="/jobs">See All</a>
+        <a class="dropdown-item" href="/jobs/type/Content Writing">Content Writing</a>
+        <a class="dropdown-item" href="/jobs/type/Graphic Design">Graphic Design</a>
+        <a class="dropdown-item" href="/jobs/type/Web Development & Design">Web
+          Development & Design</a>
+        <a class="dropdown-item" href="/jobs/type/Digital Marketing">Digital
+          Marketing</a>
+        <a class="dropdown-item" href="/jobs/type/Social Media Marketing">Social
+          Media Marketing</a>
+        <a class="dropdown-item" href="/jobs/type/Copywriting">Copywriting</a>
+        <a class="dropdown-item" href="/jobs/type/Virtual Assistance">Virtual
+          Assistance</a>
+        <a class="dropdown-item" href="/jobs/type/E-Commerce & Dropshipping">E-Commerce & Dropshipping</a>
+        <a class="dropdown-item" href="/jobs/type/Online Teaching and Tutoring">Online Teaching and Tutoring</a>
+        <a class="dropdown-item" href="/jobs/type/Data Entry and Analysis">Data
+          Entry and Analysis</a>
+        <a class="dropdown-item" href="/jobs/type/Other">Other</a>
+      </div>
     </div>
   </div>
-  <h1>Current Available Jobs</h1>
-</div>
+
 
 {{! <!-- Job Container --> }}
 {{! If logged in display all jobs avialable}}
 {{#if posts}}
-  {{#each posts}}
-    <div class="d-inline-flex justify-content-around flex-wrap">
-      <div
-        class="card m-2"
-        style="width: 20rem; min-height: 500px; max-height: 500px"
-      >
-        <img
-          class="card-img-top p-1"
-          src="/images/job-type-tall/{{job_type}}.jpg"
-          style="max-height: 275px;"
-          alt="Card image cap"
-        />
-        <div class="card-body">
-          <h5 class="card-title">{{job_title}}</h5>
-          <h6 class="card-title">{{job_type}}</h6>
-          <p class="card-text">{{post_tease job_description}}</p>
-          <a href="/jobs/{{id}}" class="btn btn-info">Learn More</a>
-        </div>
-      </div>
+{{#each posts}}
+<div class="d-inline-flex justify-content-center flex-wrap p-1">
+  <div class="card m-2" style="width: 20rem; min-height: 500px; max-height: 500px">
+    <img class="card-img-top p-1" src="/images/job-type-tall/{{job_type}}.jpg" style="max-height: 275px;"
+      alt="Card image cap" />
+    <div class="card-body">
+      <h5 class="card-title">{{job_title}}</h5>
+      <h6 class="card-title">{{job_type}}</h6>
+      <p class="card-text">{{post_tease job_description}}</p>
+      <a href="/jobs/{{id}}" class="btn btn-info">Learn More</a>
     </div>
-  {{/each}}
+  </div>
+</div>
+{{/each}}
 {{else}}
-  <h3 class="d-flex justify-content-center">No posts yet...</h3>
+<h3 class="d-flex justify-content-center">No posts yet...</h3>
 {{/if}}
 {{#if loggedIn}}{{else}}
-  <h3 class="d-flex justify-content-center my-3">Log in to see more!</h3>
+<h3 class="d-flex justify-content-center my-3">Log in to see more!</h3>
 {{/if}}
