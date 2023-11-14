@@ -62,7 +62,7 @@ const signUpHandler = async (event) => {
   }
 
   // If filled out properly then we create the fetch request
-  if (username || email || password) {
+  if (username && email && password) {
     const response = await fetch("/api/user", {
       method: "POST",
       body: JSON.stringify({ username, email, password }),
