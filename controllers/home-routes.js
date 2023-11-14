@@ -35,6 +35,7 @@ router.get("/jobs", async (req, res) => {
   }
 });
 
+
 // This is the endpoint for the filter when a specific job type is requested by filter
 router.get("/jobs/type/:name", withAuth, async (req, res) => {
   try {
