@@ -25,7 +25,7 @@
 
 ## Description 
 
-[Visit the Deployed "Work Remote" site](https://youtu.be/BFyeuLhjcPY) 👀
+[Visit the Deployed "Work Remote" site](https://work-remote-jsn-4d3b6593bab7.herokuapp.com/) 👀
 
 
 The Global Remote Workplace Services Market size is estimated to grow from USD 20.1 billion in 2022 to USD 58.5 billion by 2027, at a Compound Annual Growth Rate (CAGR) of 23.8% during the forecast period, according to a report by MarketsandMarkets.  This is a HUGE market (currently 20.1 Billion),  that is increasing at a staggering rate (23.8% annually).  
@@ -80,6 +80,16 @@ Once logged in, a Worker User can go to “See Jobs” and the entire list of al
 The Worker User can then select a job to view by clicking on “Learn More”.  That will display for them the listing of the job with all of the details including a contact email at the bottom where if they are interested in the work they can email the job poster.  If they click on the email button their e-mail editor will automatically open and the Clients email will be automatically populated. 
 
 ## Learning Points 
+Here are a couple interesting pieces of code from the project.   
+
+First, here is some JavaScript from home-routes.js showing the jobs available on the site.  Limited to 6 if the user is not logged in, but will show all if the user is logged in.
+
+![Login And Modify](./public/images/images-for-readme/job-list.jpg)
+
+Second, here is some Handlebars.js showing how it autogenerates the HTML for the dashboard.
+
+![Login And Modify](./public/images/images-for-readme/handlebars-job-postings.png)
+
 
 ## Author Info
 If you made it this far "thank you!" 😁🙏👍 We appreciate you taking such a thorough look at our work.  If you would like to contact us or see more of our work please use the links below.
@@ -124,7 +134,4 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
-## Badges
-
 
