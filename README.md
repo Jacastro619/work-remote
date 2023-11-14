@@ -42,10 +42,9 @@ This project which we have named “Work Remote” provides the ability for peop
 
 * [How To Install](#how-to-install)
 * [Usage & Features](#usage-and-features)
-* [Learning Points](#learning-points)
+* [Code Examples](#code-examples)
 * [Author Info](#author-info)
 * [License](#license)
-* [Badges](#badges)
 
 
 ## How To Install
@@ -58,14 +57,10 @@ This project which we have named “Work Remote” provides the ability for peop
 6. Open your browser and go to http://localhost:3001 and you will be able to use your own instance of Work Remote.
 
 ## Usage and Features
+### User Stories
+![3 Types Of Users](./public/images/images-for-readme/3-user-stories.jpg)
 
-This project has three separate users in mind:
-
-1. All Users
-2. The Job Post User (Client)
-3. The Job Viewer User (Worker)
-
-#### Concerning All Users:
+#### Concerning Not Logged in Users:
 
 All users can go to the site and are limited to viewing the 6 most recent project posts without being logged in.  In order to see all the job posts or to make a job post a user must make an account by entering their user name, email, and password. This information is saved to the server.  For security purposes, the user's password is made into a hash by using npm bcrypt and is stored on the server not as a raw password but as a hash.
 
@@ -79,14 +74,25 @@ Once logged in, a Worker User can go to “See Jobs” and the entire list of al
 
 The Worker User can then select a job to view by clicking on “Learn More”.  That will display for them the listing of the job with all of the details including a contact email at the bottom where if they are interested in the work they can email the job poster.  If they click on the email button their e-mail editor will automatically open and the Clients email will be automatically populated. 
 
-## Learning Points 
+### User Stories Converted To API Routes
+![API Routes](./public/images/images-for-readme/user-stories-to-routes.jpg)
+
+## Code Examples 
+We used Bootstrap as the basis of our framework, along with custom CSS
+#### Here Is The Mobile Responsiveness
+![Login And Modify](./public/images/images-for-readme/work-remote-mobile.gif)
+
+### Models
+Below is the project code for the User Model found in the User.js
+![User Model](./public/images/images-for-readme/user-model.jpg)
+
 Here are a couple interesting pieces of code from the project.   
 
-First, here is some JavaScript from home-routes.js showing the jobs available on the site.  Limited to 6 if the user is not logged in, but will show all if the user is logged in.
+First, here is the route to the job board (the actual home route) JavaScript from home-routes.js showing the jobs available on the site.  Limited to 6 if the user is not logged in, but will show all if the user is logged in.
 
 ![Login And Modify](./public/images/images-for-readme/job-list.jpg)
 
-Second, here is some Handlebars.js showing how it autogenerates the HTML for the dashboard.
+Second, here is code from the dashboard.handlebars useing Handlebars.js showing how it autogenerates the HTML for the dashboard.
 
 ![Login And Modify](./public/images/images-for-readme/handlebars-job-postings.png)
 
@@ -110,7 +116,7 @@ If you made it this far "thank you!" 😁🙏👍 We appreciate you taking such 
 
 <a href="mailto: stevensills2@gmail.com" target="_blank"><img align="center" src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="paperpatch"/></a>
 <a href="https://www.linkedin.com/in/steven-sills-ii-90781b53/" target="_blank"><img align="center" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="paperpatch"/></a>
-<a href="https://apixa25.github.io/steven-sills-portfolio/" target="_blank"><img align="center" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="paperpatch"/></a>
+<a href="https://github.com/Apixa25" target="_blank"><img align="center" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="paperpatch"/></a>
 
 
 ## License
